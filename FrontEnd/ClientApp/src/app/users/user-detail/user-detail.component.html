@@ -1,0 +1,65 @@
+<h1 id="tableLabel">{{user.userName}}</h1>
+
+<input type="radio" name="tabs" id="genInform" hidden checked />
+<input type="radio" name="tabs" id="posts" hidden />
+<input type="radio" name="tabs" id="comments" hidden />
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <label class="nav-link" for="genInform">General information</label>
+  </li>
+  <li class="nav-item">
+    <label class="nav-link" for="posts">Posts</label>
+  </li>
+  <li class="nav-item">
+    <label class="nav-link" for="comments">Comments</label>
+  </li>
+</ul>
+
+
+<div class="tab-pane genInform">
+  <div class="d-flex w-100 bd-highlight mb-3">
+    <img class="p-2 bd-highlight" src="{{user.avatarPath}}" alt="Avatar" />
+    <div class="p-2 bd-highlight">
+      <h3 class="mb-1">{{user.userName}}</h3>
+      <p>Email: {{user.email}}</p><br />
+      <p *ngIf="user.gender && user.age">{{user.gender}}, {{user.age}} years old</p>
+    </div>
+    <span class="ml-auto p-2 bd-highlight">{{user.userRole.name}}</span>
+  </div>
+</div>
+
+<div class="tab-pane posts">
+  <div class="list-group">
+    <a *ngFor="let post of user.posts"
+       [routerLink]="['/posts', post.id]" class="list-group-item
+       list-group-item-action
+       flex-column
+       align-items-start">
+      <div class="d-flex w-100 bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <h5>{{post.title}}</h5>
+          <p class="mytitle">{{post.message.slice(0, 100)}}</p>
+          <p>Amount of comments: {{post.comments.length}}</p>
+          <small>Created: {{post.dateCreated}}</small>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<div class="tab-pane comments">
+  <div *ngFor="let comment of user.comments"
+       class="col-sm-8">
+    <div class="comment">
+      <div class="comment-heading">
+        <strong>{{user.userName}}</strong>
+        <small class="text-muted">{{comment.dateCreated}}</small>
+      </div>
+      <div class="comment-body">
+        {{comment.message}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+C:\Users\Артем\source\repos\Forum\BLL\bin\Debug\netcoreapp3.0\BLL.deps.json
+C:\Users\Артем\source\repos\Forum\BLL\bin\Debug\netcoreapp3.0\BLL.dll
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.csprojAssemblyReference.cache
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.AssemblyInfo.cs
+C:\Users\Артем\source\repos\Forum\BLL\bin\Debug\netcoreapp3.0\DAL.dll
+C:\Users\Артем\source\repos\Forum\BLL\bin\Debug\netcoreapp3.0\DAL.pdb
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.csproj.CopyComplete
+C:\Users\Артем\source\repos\Forum\BLL\bin\Debug\netcoreapp3.0\BLL.pdb
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.dll
+C:\Users\Артем\source\repos\Forum\BLL\obj\Debug\netcoreapp3.0\BLL.pdb

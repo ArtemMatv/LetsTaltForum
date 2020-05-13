@@ -1,0 +1,13 @@
+.btn{
+  margin: 10px;
+  float: right;
+}
+
+h1{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.top{
+  height: 80px;
+}

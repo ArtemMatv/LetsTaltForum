@@ -1,0 +1,41 @@
+<div>
+  <h2>Users</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>USERNAME</td>
+        <td>ROLE</td>
+        <td>E-MAIL</td>
+        <td>POSTS</td>
+        <td>COMMENTS</td>
+        <td>SILENCED</td>
+        <td>TO SILENCE FOR x DAYS</td>
+        <td>BANNED</td>
+        <td>TO BAN FOR x DAYS</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.userRole.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.posts.length}}</td>
+        <td>{{user.comments.length}}</td>
+        <td>{{user.silencedTo}}</td>
+        <td>
+          <input type="number" id="silence{{user.userName}}"/>
+          <button (click)="silence(user.userName)">Silence</button>
+        </td>
+        <td>{{user.bannedTo}}</td>
+        <td>
+          <input type="number" id="ban{{user.userName}}" />
+          <button (click)="ban(user.userName)">Ban</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-pagination (goPrev)="goToPrevious()"
+                  (goNext)="goToNext()"></app-pagination>
+</div>

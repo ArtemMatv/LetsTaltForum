@@ -1,0 +1,47 @@
+.content {
+  border-bottom: solid 1px lightgrey;
+  padding-left: 0px;
+}
+
+.post-heading {
+  min-width: 100%;
+  margin-left: 1px;
+  margin-bottom: 10px;
+}
+
+.post-body {
+  margin-bottom: 20px;
+}
+
+a {
+  color: black;
+}
+
+.comment {
+  margin-top: 20px;
+  padding: 15px;
+  border: solid 2px lightgrey;
+  border-radius: 15px;
+}
+
+.comment-heading {
+  padding-bottom: 5px;
+  border-bottom: solid 1px lightgrey;
+}
+
+  .comment-heading small {
+    float: right;
+  }
+
+.comment-body {
+  padding-top: 10px;
+}
+
+.mt-8{
+  margin-top: 30px;
+}
+
+.on-center{
+  text-align: center;
+  margin-bottom: 20px;
+}

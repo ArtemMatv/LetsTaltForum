@@ -1,0 +1,69 @@
+<h1 id="tableLabel">{{post.title}}</h1>
+
+<link />
+
+<div class="col-sm-8 content">
+  <div class="post">
+    <div class="post-heading d-flex justify-content-between">
+      <small class="text-muted">{{post.dateCreated}}</small>
+      <small>
+        Author:
+        <strong>
+          <a routerLink="/users/{{post.userUserName}}">{{post.userUserName}}</a>
+        </strong>
+      </small>
+    </div>
+    <div class="post-body">
+      {{post.message}}
+    </div>
+  </div>
+</div>
+
+<div class="tab-pane comments">
+  <div *ngFor="let comment of post.comments"
+       class="col-sm-8 comment">
+    <div class="comment-heading">
+      <a routerLink="/users/{{comment.userUserName}}">
+        <strong>{{comment.userUserName}}</strong>
+      </a>
+      <small class="text-muted">{{comment.dateCreated}}</small>
+    </div>
+    <div class="comment-body">
+      {{comment.message}}
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8 mt-8"
+     *ngIf="isUser()">
+  <div class="card">
+    <h4 class="card-header">Create new post</h4>
+    <div class="card-body">
+      <form [formGroup]="commForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea formControlName="message" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+          <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+            <div *ngIf="f.message.errors.required">Message is required</div>
+          </div>
+        </div>
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Add comment
+        </button>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8 mt-8"
+     *ngIf="!isUser()">
+  <h4 class="on-center">
+    Log In to comment this post
+  </h4>
+  <button class="btn btn-big btn-info col-md-12"
+          (click)="goLogIn()">
+    Go Log In
+  </button>
+</div>

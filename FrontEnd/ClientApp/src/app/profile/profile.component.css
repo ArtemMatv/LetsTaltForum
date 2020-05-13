@@ -1,0 +1,66 @@
+
+#posts:not(:checked) ~ .posts,
+#genInform:not(:checked) ~ .genInform,
+#comments:not(:checked) ~ .comments {
+  display: none;
+}
+
+#posts:checked ~ ul li [for="posts"],
+#genInform:checked ~ ul li [for="genInform"],
+#comments:checked ~ ul li [for="comments"] {
+  border-top: solid 1px lightgrey;
+  border-left: solid 1px lightgrey;
+  border-right: solid 1px lightgrey;
+  border-radius: 5px 5px 0px 0px;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: -5px;
+}
+
+.comment {
+  margin-top: 10px;
+  padding: 15px;
+  border: solid 2px lightgrey;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.comment-heading {
+  padding-bottom: 5px;
+  border-bottom: solid 1px lightgrey;
+}
+
+.comment-heading small {
+  float: right;
+}
+
+.comment-body {
+  padding-top: 10px;
+}
+
+
+.post{
+  display: inline-block;
+  margin-right: 0;
+}
+
+.delete {
+  float: right;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.blackColor{
+  color: black;
+}
+
+.blackColor:hover{
+  color:grey;
+}

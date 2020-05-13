@@ -1,0 +1,16 @@
+table{
+  font-size: 12px;
+  width: 80%;
+  float: right;
+}
+td {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: solid 2px blue;
+  background-color: rgba(100,100,100,.6);
+  text-align: center;
+}
+
+[type="number"]{
+  width: 40px;
+}

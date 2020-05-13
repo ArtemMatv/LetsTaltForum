@@ -1,0 +1,37 @@
+<h1 id="tableLabel">{{topic.name}}</h1>
+
+<style>
+  h3 {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+</style>
+
+<div>
+  <div class="list-group">
+    <a *ngFor="let post of posts"
+       [routerLink]="['/posts', post.id]" class="list-group-item
+       list-group-item-action
+       flex-column
+       align-items-start">
+      <div class="d-flex w-100 bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <h5>{{post.title}}</h5>
+          <p class="mytitle">{{post.message.slice(0, 100)}}</p>
+          <p>Amount of comments: {{post.comments.length}}</p>
+          <small>Created: {{post.dateCreated}}</small>
+        </div>
+        <div class="ml-auto p-2 bd-highlight">
+          <p>Author: {{post.userUserName}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <app-pagination (goPrev)="goToPrevious()"
+                  (goNext)="goToNext()"></app-pagination>
+</div>
+

@@ -1,0 +1,25 @@
+<h1 id="tableLabel">Users</h1>
+
+
+<div>
+  <div class="list-group">
+    <a [routerLink]="['/users', user.userName]" class="list-group-item
+       list-group-item-action
+       flex-column
+       align-items-start"
+       *ngFor="let user of users">
+      <div class="d-flex w-100 bd-highlight mb-3">
+        <img class="p-2 bd-highlight" src="{{user.avatarPath}}" alt="Avatar" />
+        <div class="p-2 bd-highlight">
+          <h3 class="mb-1">{{user.userName}}</h3>
+          <p>Email: {{user.email}}</p><br />
+          <p>Amount of posts: {{user.posts.length}}</p>
+        </div>
+        <span class="ml-auto p-2 bd-highlight">{{user.userRole.name}}</span>
+      </div>
+    </a>
+  </div>
+
+  <app-pagination (goPrev)="goToPrevious()"
+                  (goNext)="goToNext()"></app-pagination>
+</div>

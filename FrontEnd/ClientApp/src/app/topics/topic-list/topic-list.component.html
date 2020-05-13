@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Topics</h1>
+
+<p *ngIf="!topics"><em>Loading...</em></p>
+
+<div>
+  <div class="list-group">
+    <a *ngFor="let topic of topics"
+       [routerLink]="['/topics', topic.id]" class="list-group-item
+       list-group-item-action
+       flex-column
+       align-items-start">
+      <div class="d-flex w-100 bd-highlight mb-3">
+        <h3>{{topic.name}}</h3>
+        <p>Amount of posts: {{topic.posts.length}}</p>
+      </div>
+    </a>
+  </div>
+  <app-pagination
+  (goPrev)="goToPrevious()"
+  (goNext)="goToNext()"
+  ></app-pagination>
+</div>
